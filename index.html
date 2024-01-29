@@ -30,10 +30,13 @@
             </li>
         </ul>
 
-        <form onsubmit="onCloseDetails(event)" class="todo-details hidden">
-            <pre></pre>
-            <button>x</button>
-        </form>
+        <dialog class="todo-details">
+            <form method="dialog">
+                <pre></pre>
+                <button>x</button>
+            </form>
+        </dialog>
+
         <script src="js/services/todo.service.js"></script>
         <script src="js/todos.controller.js"></script>
     </body>

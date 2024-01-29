@@ -31,13 +31,13 @@ function onToggleTodo(todoId){
 function onReadTodo(ev, todoId) {
     ev.stopPropagation()
     
-    const elModal = document.querySelector('.todo-details')
-    const elTodo = elModal.querySelector('.todo-details pre')
+    const elDialog = document.querySelector('.todo-details')
+    const elTodo = elDialog.querySelector('.todo-details pre')
 
     const todo = getTodoById(todoId)
 
     elTodo.innerText = JSON.stringify(todo, null, 4)
-    elModal.classList.remove('hidden')
+    elDialog.showModal()
 }
 
 function onCloseDetails(ev) {
