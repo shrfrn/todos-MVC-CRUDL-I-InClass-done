@@ -8,9 +8,17 @@ var gTodos = [
 
 function getTodos(filterBy) {
     if(filterBy === 'All') return gTodos
-    
+
     const isDone = (filterBy === 'Done') ? true : false
     return gTodos.filter(todo => todo.isDone === isDone)
+}
+
+function getTotalTodos() {
+    return gTodos.length
+}
+
+function getActiveTodos() {
+    return gTodos.filter(todo => !todo.isDone).length
 }
 
 function removeTodo(todoId) {
