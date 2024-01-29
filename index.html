@@ -9,6 +9,13 @@
     </head>
     <body onload="onInit()">
         <h1>Let's Todo Today</h1>
+        <section class="filter">
+            <select onchange="onSetFilterBy(this)">
+                <option value="All">All Todos</option>
+                <option value="Done">Done Todos</option>
+                <option value="Active">Active Todos</option>
+            </select>
+        </section>
 
         <form onsubmit="onAddTodo(event)">
             <input class="new-todo" type="text" placeholder="What todo?">
