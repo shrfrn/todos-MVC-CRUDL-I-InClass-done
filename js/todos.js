@@ -21,7 +21,10 @@ function renderTodos() {
 }
 
 function onRemoveTodo(todoId) {
-	console.log('todoId: ', todoId)
+    const idx = gTodos.findIndex(todo => todo.id === todoId)
+    gTodos.splice(idx, 1)
+
+    renderTodos()
 }
 
 function onAddTodo() {
