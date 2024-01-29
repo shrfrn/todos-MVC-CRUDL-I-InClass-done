@@ -1,10 +1,8 @@
 'use strict'
 
-var gTodos = [
-    _createTodo('Do this'), 
-    _createTodo('Do that'), 
-    _createTodo('Try this'), 
-]
+var gTodos = []
+
+_createTodos()
 
 function getTodos(filterBy) {
     if(filterBy === 'All') return gTodos
@@ -49,6 +47,19 @@ function addTodo(txt) {
 
 function _saveTodos() {
     saveToStorage('todoDB', gTodos)
+}
+
+function _createTodos() {
+    gTodos = loadFromStorage('todoDB')
+
+    if(!gTodos || gTodos.length === 0){
+        gTodos = [
+            _createTodo('Do This'), 
+            _createTodo('Do That'), 
+            _createTodo('Try This'),
+        ]
+        _saveTodos()
+    }
 }
 
 function _createTodo(txt) {
