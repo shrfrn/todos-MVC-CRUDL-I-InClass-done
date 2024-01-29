@@ -6,6 +6,10 @@ body {
     font-family: arial,sans-serif;
 }
 
+li:hover {
+    cursor: pointer;
+}
+
 .done {
     text-decoration: line-through;
 }
