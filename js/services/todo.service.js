@@ -1,9 +1,9 @@
 'use strict'
 
 var gTodos = [
-    { id: 't101', txt: 'Do this', isDone: false },
-    { id: 't102', txt: 'Do that', isDone: true },
-    { id: 't103', txt: 'Try this', isDone: false },
+    _createTodo('Do this'), 
+    _createTodo('Do that'), 
+    _createTodo('Try this'), 
 ]
 
 function getTodos(filterBy) {
@@ -37,10 +37,14 @@ function getTodoById(todoId) {
 }
 
 function addTodo(txt) {
-    const todo = {
-        id: 't' + Date.now() % 1000,
+    const todo = _createTodo(txt)
+    gTodos.unshift(todo)
+}
+
+function _createTodo(txt) {
+    return {
+        id: makeId(),
         txt,
         isDone: false,
     }
-    gTodos.unshift(todo)
 }
