@@ -39,6 +39,13 @@ function onToggleTodo(todoId){
 
 function onAddTodo() {
 	const elInput = document.querySelector('.new-todo')
-	console.log(elInput.value)
+    const todo = {
+        id: 't' + Date.now() % 1000,
+        txt: elInput.value,
+        isDone: false,
+    }
+    gTodos.unshift(todo)
+    
+    renderTodos()
 	elInput.value = ''
 }
