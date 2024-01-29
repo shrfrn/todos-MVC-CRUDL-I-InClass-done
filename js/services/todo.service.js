@@ -20,6 +20,11 @@ function toggleTodo(todoId) {
     todo.isDone = !todo.isDone
 }
 
+function getTodoById(todoId) {
+    const todo = gTodos.find(todo => todo.id === todoId)
+    return todo
+}
+
 function addTodo(txt) {
     const todo = {
         id: 't' + Date.now() % 1000,

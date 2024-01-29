@@ -29,6 +29,11 @@
                 <button onclick="onRemoveTodo('t789')">x</button>
             </li>
         </ul>
+
+        <form onsubmit="onCloseDetails(event)" class="todo-details hidden">
+            <pre></pre>
+            <button>x</button>
+        </form>
         <script src="js/services/todo.service.js"></script>
         <script src="js/todos.controller.js"></script>
     </body>

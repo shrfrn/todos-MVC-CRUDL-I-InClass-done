@@ -10,6 +10,10 @@ li:hover {
     cursor: pointer;
 }
 
+.hidden {
+    display: none;
+}
+
 .done {
     text-decoration: line-through;
 }
