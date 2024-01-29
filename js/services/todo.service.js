@@ -24,11 +24,15 @@ function getActiveTodos() {
 function removeTodo(todoId) {
     const idx = gTodos.findIndex(todo => todo.id === todoId)
     gTodos.splice(idx, 1)
+    
+    _saveTodos()
 }
 
 function toggleTodo(todoId) {
     const todo = gTodos.find(todo => todo.id === todoId)
     todo.isDone = !todo.isDone
+    
+    _saveTodos()
 }
 
 function getTodoById(todoId) {
@@ -38,7 +42,13 @@ function getTodoById(todoId) {
 
 function addTodo(txt) {
     const todo = _createTodo(txt)
+
     gTodos.unshift(todo)
+    _saveTodos()
+}
+
+function _saveTodos() {
+    saveToStorage('todoDB', gTodos)
 }
 
 function _createTodo(txt) {
